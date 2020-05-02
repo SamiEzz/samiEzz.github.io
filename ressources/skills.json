@@ -1,0 +1,66 @@
+{
+    "C": {
+        "p1": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.",
+        "rating": 3
+    },
+    "Cpp": {
+        "p1": "",
+        "rating": 3
+    },
+    "python": {
+        "p1": "",
+        "rating": 3
+    },
+    "linux": {
+        "p1": "",
+        "rating": 3
+    },
+    "gitlab": {
+        "p1": "",
+        "rating": 3
+    },
+    "matlab": {
+        "p1": "",
+        "rating": 3
+    },
+    "docker": {
+        "p1": "",
+        "rating": 3
+    },
+    "mysql": {
+        "p1": "",
+        "rating": 3
+    },
+    "raspi": {
+        "p1": "",
+        "rating": 3
+    },
+    "php": {
+        "p1": "",
+        "rating": 3
+    },
+    "htmlcss": {
+        "p1": "",
+        "rating": 3
+    },
+    "wordpress": {
+        "p1": "",
+        "rating": 3
+    },
+    "cv": {
+        "p1": "",
+        "rating": 3
+    },
+    "tf": {
+        "p1": "",
+        "rating": 3
+    },
+    "pd": {
+        "p1": "",
+        "rating": 3
+    },
+    "kafka": {
+        "p1": "",
+        "rating": 3
+    }
+}
