@@ -48,7 +48,8 @@ $(function() {
           $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
           $('#success > .alert-danger').append($("<strong>").text("Sorry, it seems that my mail server is not responding. Please try again later!"));
-          $('#success > .alert-danger').append($("<strong>").text("Don't worry "+firstName+". You can contact me via email : <a href='mailto:sami.ezzerouali@hotmail.com?subject=[samiezz.github.io] Subject : '>sami.ezzerouali@hotmail.com</a> !"));
+          $('#success > .alert-danger').append($("<strong>").text("Don't worry "+firstName+". You can contact me via email : "));
+          $('#success > .alert-danger').append("<a href='mailto:sami.ezzerouali@hotmail.com?subject=[samiezz.github.io] Subject : '>sami.ezzerouali@hotmail.com</a> !");
           $('#success > .alert-danger').append('</div>');
           //clear all fields
           $('#contactForm').trigger("reset");
