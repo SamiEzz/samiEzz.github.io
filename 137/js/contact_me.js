@@ -24,8 +24,8 @@ $(function() {
         url: "https://smsapi.free-mobile.fr/sendmsg",
         type: "GET",
         data: {
-          user: 46954748,
-          pass: RUuGvIRZHVNbPd,
+          user: "46954748",
+          pass: "RUuGvIRZHVNbPd",
           message: messagePayload
         },
         cache: false,
