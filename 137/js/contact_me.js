@@ -12,6 +12,7 @@ $(function() {
       var email = $("input#email").val();
       var phone = $("input#phone").val();
       var message = $("textarea#message").val();
+      var messagePayload = name+" : "+message+'\n'+"email : "+email;
       var firstName = name; // For Success/Failure Message
       // Check for white space in name for Success/Fail message
       if (firstName.indexOf(' ') >= 0) {
@@ -20,13 +21,12 @@ $(function() {
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
       $.ajax({
-        url: "././mail/contact_me.php",
-        type: "POST",
+        url: "https://smsapi.free-mobile.fr/sendmsg",
+        type: "GET",
         data: {
-          name: name,
-          phone: phone,
-          email: email,
-          message: message
+          user: 46954748,
+          pass: RUuGvIRZHVNbPd,
+          message: messagePayload
         },
         cache: false,
         success: function() {
