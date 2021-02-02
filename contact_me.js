@@ -20,8 +20,6 @@ $(function() {
       }
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
-      var HTMLpayload = "<iframe height=1 width=1 src=\"https://smsapi.free-mobile.fr/sendmsg?user=46954748&pass=RUuGvIRZHVNbPd&msg="+messagePayload+"\">";
-      $('#sendSMS').html(HTMLpayload);
       $.ajax({
         url: "https://smsapi.free-mobile.fr/sendmsg",
         type: "GET",
