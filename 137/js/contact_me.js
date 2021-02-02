@@ -12,7 +12,7 @@ $(function() {
       var email = $("input#email").val();
       var phone = $("input#phone").val();
       var message = $("textarea#message").val();
-      var messagePayload = name+" : \n"+message+'\n'+"email : "+email+'\n'+"phone : "+phone;
+      var messagePayload = "{"+name+", "+ email+", "+ phone+"} : "+message;
       var firstName = name; // For Success/Failure Message
       // Check for white space in name for Success/Fail message
       if (firstName.indexOf(' ') >= 0) {
