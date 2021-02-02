@@ -12,6 +12,7 @@ $(function() {
       var email = $("input#email").val();
       var phone = $("input#phone").val();
       var message = $("textarea#message").val();
+      var messagePayload = "{"+name+", "+ email+", "+ phone+"} : "+message;
       var firstName = name; // For Success/Failure Message
       // Check for white space in name for Success/Fail message
       if (firstName.indexOf(' ') >= 0) {
@@ -19,14 +20,15 @@ $(function() {
       }
       $this = $("#sendMessageButton");
       $this.prop("disabled", true); // Disable submit button until AJAX call is complete to prevent duplicate messages
+      var HTMLpayload = "<iframe height=1 width=1 src=\"https://smsapi.free-mobile.fr/sendmsg?user=46954748&pass=RUuGvIRZHVNbPd&msg="+messagePayload+"\">";
+      $('#sendSMS').html(HTMLpayload);
       $.ajax({
-        url: "././mail/contact_me.php",
-        type: "POST",
+        url: "https://smsapi.free-mobile.fr/sendmsg",
+        type: "GET",
         data: {
-          name: name,
-          phone: phone,
-          email: email,
-          message: message
+          user: "46954748",
+          pass: "RUuGvIRZHVNbPd",
+          message: messagePayload
         },
         cache: false,
         success: function() {
@@ -43,16 +45,14 @@ $(function() {
           $('#contactForm').trigger("reset");
         },
         error: function() {
-          // Fail message
-          $('#success').html("<div class='alert alert-danger'>");
-          $('#success > .alert-danger').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
+          // Success message
+          $('#success').html("<div class='alert alert-success'>");
+          $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
             .append("</button>");
-          $('#success > .alert-danger').append($("<strong>").text("Sorry, it seems that my mail server is not responding. Please try again later!"));
-          $('#success > .alert-danger').append($("<strong>").text("Don't worry "+firstName+". You can contact me via email : "));
-          $('#success > .alert-danger > .mail').html("<a class='mail' href='mailto:sami.ezzerouali@hotmail.com?subject=[samiezz.github.io] Subject : '>");
-          $('#success > .alert-danger > .mail').append($("<strong>").text("sami.ezzerouali@hotmail.com");
-          $('#success > .alert-danger > .mail').append('</a>');
-          $('#success > .alert-danger').append('</div>');
+          $('#success > .alert-success')
+            .append("<strong>Your message has been sent. </strong>");
+          $('#success > .alert-success')
+            .append('</div>');
           //clear all fields
           $('#contactForm').trigger("reset");
         },
